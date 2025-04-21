@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - DonationsServiceApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>DonationsServiceApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.pibbletv.donations_service.html">com.pibbletv.donations_service</a> &gt; DonationsServiceApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.956s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads()</td>
+<td class="success">0.956s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>23:58:09.904 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pibbletv.donations_service.DonationsServiceApplicationTests]: DonationsServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:58:10.115 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pibbletv.donations_service.DonationsServiceApplication for test class com.pibbletv.donations_service.DonationsServiceApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.4)
+
+2025-04-21T23:58:11.333+02:00  INFO 7396 --- [donations-service] [    Test worker] c.p.d.DonationsServiceApplicationTests   : Starting DonationsServiceApplicationTests using Java 17.0.12 with PID 7396 (started by hristo in D:\Individual Assignment\PibbleTV-Backend\donations-service)
+2025-04-21T23:58:11.335+02:00  INFO 7396 --- [donations-service] [    Test worker] c.p.d.DonationsServiceApplicationTests   : The following 1 profile is active: &quot;test&quot;
+2025-04-21T23:58:12.240+02:00  INFO 7396 --- [donations-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-04-21T23:58:12.479+02:00  INFO 7396 --- [donations-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 226 ms. Found 1 R2DBC repository interface.
+2025-04-21T23:58:12.759+02:00  INFO 7396 --- [donations-service] [    Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=96e89bf4-8008-3963-b22d-8aa014bf9596
+2025-04-21T23:58:14.718+02:00  INFO 7396 --- [donations-service] [    Test worker] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-04-21T23:58:14.905+02:00  WARN 7396 --- [donations-service] [    Test worker] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-04-21T23:58:15.020+02:00  INFO 7396 --- [donations-service] [    Test worker] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-04-21T23:58:15.067+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-04-21T23:58:15.078+02:00  INFO 7396 --- [donations-service] [    Test worker] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-04-21T23:58:15.098+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-04-21T23:58:15.098+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-04-21T23:58:15.098+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-04-21T23:58:15.098+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-04-21T23:58:15.098+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-04-21T23:58:15.098+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-04-21T23:58:15.099+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-04-21T23:58:15.875+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-04-21T23:58:15.877+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-04-21T23:58:15.880+02:00  INFO 7396 --- [donations-service] [    Test worker] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-04-21T23:58:15.884+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1745272695882 with initial instances count: 0
+2025-04-21T23:58:15.892+02:00  INFO 7396 --- [donations-service] [    Test worker] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DONATIONS-SERVICE with eureka with status UP
+2025-04-21T23:58:15.894+02:00  INFO 7396 --- [donations-service] [    Test worker] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1745272695894, current=UP, previous=STARTING]
+2025-04-21T23:58:15.896+02:00  INFO 7396 --- [donations-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DONATIONS-SERVICE/host.docker.internal:donations-service:8084: registering service...
+2025-04-21T23:58:15.921+02:00  INFO 7396 --- [donations-service] [    Test worker] c.p.d.DonationsServiceApplicationTests   : Started DonationsServiceApplicationTests in 5.279 seconds (process running for 7.7)
+2025-04-21T23:58:15.978+02:00  INFO 7396 --- [donations-service] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DONATIONS-SERVICE/host.docker.internal:donations-service:8084 - registration status: 204
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.13</a> at Apr 21, 2025, 11:58:20 PM</p>
+</div>
+</div>
+</body>
+</html>
