@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DonationConverter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">donations_service</a> &gt; <a href="index.source.html" class="el_package">com.pibbletv.donations_service.business.converters</a> &gt; <span class="el_source">DonationConverter.java</span></div><h1>DonationConverter.java</h1><pre class="source lang-java linenums">package com.pibbletv.donations_service.business.converters;
+
+import com.pibbletv.donations_service.persistance.entities.DonationEntity;
+import com.pibbletv.donations_service.domain.Donation;
+
+import java.util.Base64;
+
+public final class DonationConverter {
+
+<span class="nc" id="L10">    private DonationConverter() {</span>
+<span class="nc" id="L11">        throw new IllegalStateException(&quot;Donations Converter should not be instantiated&quot;);</span>
+    }
+
+    public static Donation convertToObject(DonationEntity entity)
+    {
+<span class="nc bnc" id="L16" title="All 2 branches missed.">        if (entity == null) return null;</span>
+
+<span class="nc" id="L18">        return Donation.builder()</span>
+<span class="nc" id="L19">                .id(entity.getId())</span>
+<span class="nc" id="L20">                .donorId(entity.getDonorId())</span>
+<span class="nc" id="L21">                .receiverId(entity.getReceiverId())</span>
+<span class="nc" id="L22">                .donationAmount(entity.getDonationAmount())</span>
+<span class="nc" id="L23">                .donationMessage(entity.getDonationMessage())</span>
+<span class="nc" id="L24">                .donatedAt(entity.getDonatedAt())</span>
+<span class="nc" id="L25">                .build();</span>
+    }
+
+    public static DonationEntity convertToEntity(Donation donation) {
+<span class="nc bnc" id="L29" title="All 2 branches missed.">        if (donation == null) return null;</span>
+
+<span class="nc" id="L31">        return DonationEntity.builder()</span>
+<span class="nc" id="L32">                .id(donation.getId())</span>
+<span class="nc" id="L33">                .donorId(donation.getDonorId())</span>
+<span class="nc" id="L34">                .receiverId(donation.getReceiverId())</span>
+<span class="nc" id="L35">                .donationAmount(donation.getDonationAmount())</span>
+<span class="nc" id="L36">                .donationMessage(donation.getDonationMessage())</span>
+<span class="nc" id="L37">                .donatedAt(donation.getDonatedAt())</span>
+<span class="nc" id="L38">                .build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

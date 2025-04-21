@@ -17,4 +17,4 @@ EXPOSE 8084
 ENTRYPOINT ["java", "-jar", "donations_service.jar"]
 
 #docker build -t ghcr.io/pibbletv/pibbletv-donations-service:latest -f Dockerfile .
-#docker run -d --name ghcr.io/pibbletv/pibbletv-donations-service:latest -p 8084:8084 follows_service
+#docker run -d --name donations-service -p 8084:8084 ghcr.io/pibbletv/pibbletv-donations-service:latest
