@@ -8,7 +8,7 @@ import java.util.Base64;
 public final class DonationConverter {
 
     private DonationConverter() {
-        throw new IllegalStateException("Category converter");
+        throw new IllegalStateException("Donations Converter should not be instantiated");
     }
 
     public static Donation convertToObject(DonationEntity entity)

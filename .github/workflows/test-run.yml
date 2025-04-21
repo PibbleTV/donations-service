@@ -33,7 +33,7 @@ jobs:
 
       - name: Test Docker image
         run: |
-          docker run --rm -d --name category-service -p 8082:8082 ghcr.io/pibbletv/pibbletv-donations-service:latest
-          docker stop category-service
+          docker run --rm -d --name donations-service -p 8084:8084 ghcr.io/pibbletv/pibbletv-donations-service:latest
+          docker stop donations-service
 
 
