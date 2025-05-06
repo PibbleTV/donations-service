@@ -3,10 +3,8 @@ package com.pibbletv.donations_service.controller;
 import com.pibbletv.donations_service.business.interfaces.DonationService;
 import com.pibbletv.donations_service.domain.Donation;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
@@ -20,6 +18,11 @@ public class DonationController {
     @PostMapping(value = "/makeDonation")
     public Mono<Void> makeDonation(@RequestBody Donation donation) {
         return donationService.makeDonation(donation);
+    }
+
+    @GetMapping(value = "/getDonations")
+    public Flux<Donation> getAllDonations(@RequestParam Long userId) {
+        return donationService.getAllDonations(userId);
     }
 
 }

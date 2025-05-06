@@ -8,6 +8,7 @@ import com.pibbletv.donations_service.persistance.entities.DonationEntity;
 import com.pibbletv.donations_service.persistance.repository.DonationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
@@ -22,6 +23,11 @@ public class DonationServiceImpl implements DonationService {
         DonationEntity donationEntity = DonationConverter.convertToEntity(donation);
         return donationRepository.save(donationEntity)
                 .then();
+    }
+
+    @Override
+    public Flux<Donation> getAllDonations(Long userId) {
+        return donationRepository.findByDonorId(userId).map(DonationConverter::convertToObject);
     }
 
 
