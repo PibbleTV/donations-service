@@ -13,29 +13,29 @@ public final class DonationConverter {
 
     public static Donation convertToObject(DonationEntity entity)
     {
-<span class="nc bnc" id="L16" title="All 2 branches missed.">        if (entity == null) return null;</span>
+<span class="pc bpc" id="L16" title="1 of 2 branches missed.">        if (entity == null) return null;</span>
 
-<span class="nc" id="L18">        return Donation.builder()</span>
-<span class="nc" id="L19">                .id(entity.getId())</span>
-<span class="nc" id="L20">                .donorId(entity.getDonorId())</span>
-<span class="nc" id="L21">                .receiverId(entity.getReceiverId())</span>
-<span class="nc" id="L22">                .donationAmount(entity.getDonationAmount())</span>
-<span class="nc" id="L23">                .donationMessage(entity.getDonationMessage())</span>
-<span class="nc" id="L24">                .donatedAt(entity.getDonatedAt())</span>
-<span class="nc" id="L25">                .build();</span>
+<span class="fc" id="L18">        return Donation.builder()</span>
+<span class="fc" id="L19">                .id(entity.getId())</span>
+<span class="fc" id="L20">                .donorId(entity.getDonorId())</span>
+<span class="fc" id="L21">                .receiverId(entity.getReceiverId())</span>
+<span class="fc" id="L22">                .donationAmount(entity.getDonationAmount())</span>
+<span class="fc" id="L23">                .donationMessage(entity.getDonationMessage())</span>
+<span class="fc" id="L24">                .donatedAt(entity.getDonatedAt())</span>
+<span class="fc" id="L25">                .build();</span>
     }
 
     public static DonationEntity convertToEntity(Donation donation) {
-<span class="nc bnc" id="L29" title="All 2 branches missed.">        if (donation == null) return null;</span>
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">        if (donation == null) return null;</span>
 
-<span class="nc" id="L31">        return DonationEntity.builder()</span>
-<span class="nc" id="L32">                .id(donation.getId())</span>
-<span class="nc" id="L33">                .donorId(donation.getDonorId())</span>
-<span class="nc" id="L34">                .receiverId(donation.getReceiverId())</span>
-<span class="nc" id="L35">                .donationAmount(donation.getDonationAmount())</span>
-<span class="nc" id="L36">                .donationMessage(donation.getDonationMessage())</span>
-<span class="nc" id="L37">                .donatedAt(donation.getDonatedAt())</span>
-<span class="nc" id="L38">                .build();</span>
+<span class="fc" id="L31">        return DonationEntity.builder()</span>
+<span class="fc" id="L32">                .id(donation.getId())</span>
+<span class="fc" id="L33">                .donorId(donation.getDonorId())</span>
+<span class="fc" id="L34">                .receiverId(donation.getReceiverId())</span>
+<span class="fc" id="L35">                .donationAmount(donation.getDonationAmount())</span>
+<span class="fc" id="L36">                .donationMessage(donation.getDonationMessage())</span>
+<span class="fc" id="L37">                .donatedAt(donation.getDonatedAt())</span>
+<span class="fc" id="L38">                .build();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

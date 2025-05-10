@@ -7,5 +7,5 @@ import reactor.core.publisher.Flux;
 
 @Repository
 public interface DonationRepository extends ReactiveCrudRepository<DonationEntity, Long> {
-    Flux<DonationEntity> findByDonorId(Long donorId);
+    Flux<DonationEntity> findByReceiverId(Long receiverId);
 }
