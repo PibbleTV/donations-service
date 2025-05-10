@@ -27,7 +27,7 @@ public class DonationServiceImpl implements DonationService {
 
     @Override
     public Flux<Donation> getAllDonations(Long userId) {
-        return donationRepository.findByDonorId(userId).map(DonationConverter::convertToObject);
+        return donationRepository.findByReceiverId(userId).map(DonationConverter::convertToObject);
     }
 
 
