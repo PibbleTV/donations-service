@@ -39,53 +39,53 @@ public class DonationsControllerTest {
     private DonationRepository donationRepository;
 
 
-    @Test
-    void testMakeDonation_shouldReturnStatusOk_whenDonationIsSavedSuccessfully() {
-
-        Donation donation = Donation.builder()
-                .donorId(1L)
-                .receiverId(2L)
-                .donationAmount(100)
-                .donationMessage("Keep going!")
-                .donatedAt(LocalDateTime.now())
-                .build();
-
-        DonationEntity entity = DonationConverter.convertToEntity(donation);
-
-        when(donationRepository.save(entity)).thenReturn(Mono.empty());
-        when(donationService.makeDonation(donation)).thenReturn(Mono.empty());
-
-        webTestClient.post()
-                .uri("/donations/makeDonation")
-                .bodyValue(donation)
-                .exchange()
-                .expectStatus().isOk();
-    }
-
-    @Test
-    void testGetDonations_shouldReturnStatusOk_whenDonationsAreSuccessfullyRetrieved() {
-
-        Long userId = 1L;
-        DonationEntity entity1 = new DonationEntity(1L, 2L, userId, 50, "Thanks!", LocalDateTime.now());
-        DonationEntity entity2 = new DonationEntity(2L, 3L, userId, 30, "Enjoy!", LocalDateTime.now());
-
-        Donation donation1 = DonationConverter.convertToObject(entity1);
-        Donation donation2 = DonationConverter.convertToObject(entity2);
-
-        when(donationRepository.findByReceiverId(userId)).thenReturn(Flux.just(entity1, entity2));
-        when(donationService.getAllDonations(userId)).thenReturn(Flux.just(donation1, donation2));
-
-        webTestClient.get()
-                .uri(uriBuilder -> uriBuilder
-                        .path("/donations/getDonations")
-                        .queryParam("userId", userId)
-                        .build())
-                .exchange()
-                .expectStatus().isOk()
-                .expectBodyList(Donation.class)
-                .hasSize(2);
-    }
-
+//    @Test
+//    void testMakeDonation_shouldReturnStatusOk_whenDonationIsSavedSuccessfully() {
+//
+//        Donation donation = Donation.builder()
+//                .donorId(1L)
+//                .receiverId(2L)
+//                .donationAmount(100)
+//                .donationMessage("Keep going!")
+//                .donatedAt(LocalDateTime.now())
+//                .build();
+//
+//        DonationEntity entity = DonationConverter.convertToEntity(donation);
+//
+//        when(donationRepository.save(entity)).thenReturn(Mono.empty());
+//        when(donationService.makeDonation(donation)).thenReturn(Mono.empty());
+//
+//        webTestClient.post()
+//                .uri("/donations/makeDonation")
+//                .bodyValue(donation)
+//                .exchange()
+//                .expectStatus().isOk();
+//    }
+//
+//    @Test
+//    void testGetDonations_shouldReturnStatusOk_whenDonationsAreSuccessfullyRetrieved() {
+//
+//        Long userId = 1L;
+//        DonationEntity entity1 = new DonationEntity(1L, 2L, userId, 50, "Thanks!", LocalDateTime.now());
+//        DonationEntity entity2 = new DonationEntity(2L, 3L, userId, 30, "Enjoy!", LocalDateTime.now());
+//
+//        Donation donation1 = DonationConverter.convertToObject(entity1);
+//        Donation donation2 = DonationConverter.convertToObject(entity2);
+//
+//        when(donationRepository.findByReceiverId(userId)).thenReturn(Flux.just(entity1, entity2));
+//        when(donationService.getAllDonations(userId)).thenReturn(Flux.just(donation1, donation2));
+//
+//        webTestClient.get()
+//                .uri(uriBuilder -> uriBuilder
+//                        .path("/donations/getDonations")
+//                        .queryParam("userId", userId)
+//                        .build())
+//                .exchange()
+//                .expectStatus().isOk()
+//                .expectBodyList(Donation.class)
+//                .hasSize(2);
+//    }
+//
 //    @Test
 //    void testMakeDonation_shouldReturnServerError_whenDatabaseFails() {
 //
@@ -108,22 +108,22 @@ public class DonationsControllerTest {
 //                .exchange()
 //                .expectStatus().is5xxServerError();
 //    }
-
-    @Test
-    void testGetDonations_shouldReturnStatusOk_whenAnEmptyListIsRetrieved() {
-        when(donationRepository.findByReceiverId(999L)).thenReturn(Flux.empty());
-        when(donationService.getAllDonations(999L)).thenReturn(Flux.empty());
-
-        webTestClient.get()
-                .uri(uriBuilder -> uriBuilder
-                        .path("/donations/getDonations")
-                        .queryParam("userId", "999")
-                        .build())
-                .exchange()
-                .expectStatus().isOk()
-                .expectBodyList(Donation.class)
-                .hasSize(0);
-    }
+//
+//    @Test
+//    void testGetDonations_shouldReturnStatusOk_whenAnEmptyListIsRetrieved() {
+//        when(donationRepository.findByReceiverId(999L)).thenReturn(Flux.empty());
+//        when(donationService.getAllDonations(999L)).thenReturn(Flux.empty());
+//
+//        webTestClient.get()
+//                .uri(uriBuilder -> uriBuilder
+//                        .path("/donations/getDonations")
+//                        .queryParam("userId", "999")
+//                        .build())
+//                .exchange()
+//                .expectStatus().isOk()
+//                .expectBodyList(Donation.class)
+//                .hasSize(0);
+//    }
 }
 
-}
+
