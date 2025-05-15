@@ -17,6 +17,7 @@ public final class DonationConverter {
 
         return Donation.builder()
                 .id(entity.getId())
+                .donationId(entity.getDonationId())
                 .donorId(entity.getDonorId())
                 .receiverId(entity.getReceiverId())
                 .donationAmount(entity.getDonationAmount())
@@ -30,6 +31,7 @@ public final class DonationConverter {
 
         return DonationEntity.builder()
                 .id(donation.getId())
+                .donationId(donation.getDonationId())
                 .donorId(donation.getDonorId())
                 .receiverId(donation.getReceiverId())
                 .donationAmount(donation.getDonationAmount())

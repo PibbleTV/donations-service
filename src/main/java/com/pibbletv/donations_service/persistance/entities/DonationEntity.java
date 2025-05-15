@@ -7,8 +7,10 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @Builder
@@ -20,11 +22,17 @@ public class DonationEntity {
     @Id
     private Long id;
 
-    @Column("donorId")
-    private Long donorId;
+    @NotNull
+    @Column("donationId")
+    private UUID donationId;
 
+    @NotNull
+    @Column("donorId")
+    private UUID donorId;
+
+    @NotNull
     @Column("receiverId")
-    private Long receiverId;
+    private UUID receiverId;
 
     @Column("donationAmount")
     private Integer donationAmount;
