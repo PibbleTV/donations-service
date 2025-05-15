@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 
 @Service
 @AllArgsConstructor
@@ -20,6 +22,10 @@ public class DonationServiceImpl implements DonationService {
 
     @Override
     public Mono<Void> makeDonation(Donation donation) {
+
+        UUID uuid = UUID.randomUUID();
+        donation.setDonationId(uuid);
+
         DonationEntity donationEntity = DonationConverter.convertToEntity(donation);
         return donationRepository.save(donationEntity)
                 .then();
