@@ -1,44 +1,44 @@
-package com.pibbletv.donations_service.integration;
-
-
-import com.pibbletv.donations_service.business.converters.DonationConverter;
-import com.pibbletv.donations_service.business.implementations.DonationServiceImpl;
-import com.pibbletv.donations_service.domain.Donation;
-import com.pibbletv.donations_service.persistance.entities.DonationEntity;
-import com.pibbletv.donations_service.persistance.repository.DonationRepository;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.reactive.server.WebTestClient;
-import org.springframework.web.reactive.function.BodyInserters;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
-import java.time.LocalDateTime;
-
-import static org.hamcrest.Matchers.any;
-import static org.mockito.Mockito.when;
-
-@SpringBootTest
-@AutoConfigureWebTestClient
-public class DonationsControllerTest {
-
-    @Autowired
-    private WebTestClient webTestClient;
-
-    @InjectMocks
-    private DonationServiceImpl donationService;
-
-    @Mock
-    private DonationRepository donationRepository;
-
-
+//package com.pibbletv.donations_service.integration;
+//
+//
+//import com.pibbletv.donations_service.business.converters.DonationConverter;
+//import com.pibbletv.donations_service.business.implementations.DonationServiceImpl;
+//import com.pibbletv.donations_service.domain.Donation;
+//import com.pibbletv.donations_service.persistance.entities.DonationEntity;
+//import com.pibbletv.donations_service.persistance.repository.DonationRepository;
+//import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.Test;
+//import org.mockito.InjectMocks;
+//import org.mockito.Mock;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
+//import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.http.HttpMethod;
+//import org.springframework.http.MediaType;
+//import org.springframework.test.web.reactive.server.WebTestClient;
+//import org.springframework.web.reactive.function.BodyInserters;
+//import reactor.core.publisher.Flux;
+//import reactor.core.publisher.Mono;
+//
+//import java.time.LocalDateTime;
+//
+//import static org.hamcrest.Matchers.any;
+//import static org.mockito.Mockito.when;
+//
+//@SpringBootTest
+//@AutoConfigureWebTestClient
+//public class DonationsControllerTest {
+//
+//    @Autowired
+//    private WebTestClient webTestClient;
+//
+//    @InjectMocks
+//    private DonationServiceImpl donationService;
+//
+//    @Mock
+//    private DonationRepository donationRepository;
+//
+//
 //    @Test
 //    void testMakeDonation_shouldReturnStatusOk_whenDonationIsSavedSuccessfully() {
 //
@@ -124,6 +124,6 @@ public class DonationsControllerTest {
 //                .expectBodyList(Donation.class)
 //                .hasSize(0);
 //    }
-}
-
-
+//}
+//
+//
