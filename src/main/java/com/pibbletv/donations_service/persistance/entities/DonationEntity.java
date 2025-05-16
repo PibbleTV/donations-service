@@ -23,10 +23,6 @@ public class DonationEntity {
     private Long id;
 
     @NotNull
-    @Column("donationId")
-    private UUID donationId;
-
-    @NotNull
     @Column("donorId")
     private UUID donorId;
 

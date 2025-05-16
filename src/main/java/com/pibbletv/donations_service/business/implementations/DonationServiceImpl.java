@@ -22,17 +22,13 @@ public class DonationServiceImpl implements DonationService {
 
     @Override
     public Mono<Void> makeDonation(Donation donation) {
-
-        UUID uuid = UUID.randomUUID();
-        donation.setDonationId(uuid);
-
         DonationEntity donationEntity = DonationConverter.convertToEntity(donation);
         return donationRepository.save(donationEntity)
                 .then();
     }
 
     @Override
-    public Flux<Donation> getAllDonations(Long userId) {
+    public Flux<Donation> getAllDonations(UUID userId) {
         return donationRepository.findByReceiverId(userId).map(DonationConverter::convertToObject);
     }
 

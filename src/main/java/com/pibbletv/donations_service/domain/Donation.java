@@ -16,8 +16,6 @@ public class Donation {
 
     private Long id;
 
-    private UUID donationId;
-
     private UUID donorId;
 
     private UUID receiverId;
