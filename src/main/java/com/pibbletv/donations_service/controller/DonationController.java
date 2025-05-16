@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 
 @RestController
 @AllArgsConstructor
@@ -21,7 +23,7 @@ public class DonationController {
     }
 
     @GetMapping(value = "/getDonations")
-    public Flux<Donation> getAllDonations(@RequestParam Long userId) {
+    public Flux<Donation> getAllDonations(@RequestParam UUID userId) {
         return donationService.getAllDonations(userId);
     }
 
