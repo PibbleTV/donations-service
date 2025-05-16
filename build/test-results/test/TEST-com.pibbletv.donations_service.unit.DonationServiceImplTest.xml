@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pibbletv.donations_service.unit.DonationServiceImplTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-05-14T17:20:19.691Z" hostname="DESKTOP-NS6POVE" time="0.626">
-  <properties/>
-  <testcase name="makeDonation_ShouldSaveSuccessfully()" classname="com.pibbletv.donations_service.unit.DonationServiceImplTest" time="0.606"/>
-  <testcase name="getAllDonations_ShouldReturnListOfDonations()" classname="com.pibbletv.donations_service.unit.DonationServiceImplTest" time="0.01"/>
-  <testcase name="getAllDonations_WhenNoDonationsExist_ShouldReturnEmptyFlux()" classname="com.pibbletv.donations_service.unit.DonationServiceImplTest" time="0.006"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
