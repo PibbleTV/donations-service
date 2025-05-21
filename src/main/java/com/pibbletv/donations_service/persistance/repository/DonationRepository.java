@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface DonationRepository extends ReactiveCrudRepository<DonationEntity, Long> {
-    Flux<DonationEntity> findByReceiverId(UUID receiverId);
+    Flux<DonationEntity> findByReceiverId(String receiverId);
 }

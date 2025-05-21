@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.UUID;
-
 
 @Service
 @AllArgsConstructor
@@ -28,7 +26,7 @@ public class DonationServiceImpl implements DonationService {
     }
 
     @Override
-    public Flux<Donation> getAllDonations(UUID userId) {
+    public Flux<Donation> getAllDonations(String userId) {
         return donationRepository.findByReceiverId(userId).map(DonationConverter::convertToObject);
     }
 

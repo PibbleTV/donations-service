@@ -16,9 +16,9 @@ public class Donation {
 
     private Long id;
 
-    private UUID donorId;
+    private String donorId;
 
-    private UUID receiverId;
+    private String receiverId;
 
     private Integer donationAmount;
 

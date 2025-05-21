@@ -25,11 +25,11 @@ public class DonationEntity {
 
     @NotNull
     @Column("donorId")
-    private UUID donorId;
+    private String donorId;
 
     @NotNull
     @Column("receiverId")
-    private UUID receiverId;
+    private String receiverId;
 
     @Column("donationAmount")
     private Integer donationAmount;
