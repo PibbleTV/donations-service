@@ -23,7 +23,7 @@ public class DonationController {
     }
 
     @GetMapping(value = "/getDonations")
-    public Flux<Donation> getAllDonations(@RequestParam UUID userId) {
+    public Flux<Donation> getAllDonations(@RequestParam String userId) {
         return donationService.getAllDonations(userId);
     }
 
