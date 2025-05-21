@@ -13,18 +13,17 @@
 //@Configuration
 //public class SecurityConfig {
 //
-//    @Bean
-//    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
-//
-//        http
-//                .csrf(ServerHttpSecurity.CsrfSpec::disable)
-//                .authorizeExchange(exchanges -> exchanges
-//                        .pathMatchers("/eureka/**").authenticated()
-//                        .anyExchange().authenticated()
-//                )
-//                .httpBasic(Customizer.withDefaults());
-////                .formLogin(ServerHttpSecurity.FormLoginSpec::disable);
-//
-//        return http.build();
-//    }
+    //@Bean
+    //public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
+    //
+    //    http
+    //            .csrf(ServerHttpSecurity.CsrfSpec::disable)
+    //            .authorizeExchange(exchanges -> exchanges
+    //                    .anyExchange().permitAll()
+    //            )
+    //            .httpBasic(ServerHttpSecurity.HttpBasicSpec::disable)
+    //            .formLogin(ServerHttpSecurity.FormLoginSpec::disable);
+    //
+    //    return http.build();
+    //}
 //}
