@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.157s</div>
+<div class="counter">1.175s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">1.157s</td>
+<td class="success">1.175s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,8 +87,8 @@
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>02:56:27.927 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pibbletv.donations_service.DonationsServiceApplicationTests]: DonationsServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-02:56:28.200 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pibbletv.donations_service.DonationsServiceApplication for test class com.pibbletv.donations_service.DonationsServiceApplicationTests
+<pre>16:14:26.157 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pibbletv.donations_service.DonationsServiceApplicationTests]: DonationsServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:14:26.364 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pibbletv.donations_service.DonationsServiceApplication for test class com.pibbletv.donations_service.DonationsServiceApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -99,15 +99,23 @@
 
  :: Spring Boot ::                (v3.4.4)
 
-2025-05-18T02:56:30.053+02:00  INFO 13536 --- [donations-service] [    Test worker] c.p.d.DonationsServiceApplicationTests   : Starting DonationsServiceApplicationTests using Java 17.0.12 with PID 13536 (started by hristo in D:\Individual Assignment\PibbleTV-Backend\donations-service)
-2025-05-18T02:56:30.055+02:00  INFO 13536 --- [donations-service] [    Test worker] c.p.d.DonationsServiceApplicationTests   : The following 1 profile is active: &quot;test&quot;
-2025-05-18T02:56:31.028+02:00  INFO 13536 --- [donations-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2025-05-18T02:56:31.327+02:00  INFO 13536 --- [donations-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 286 ms. Found 1 R2DBC repository interface.
-2025-05-18T02:56:31.561+02:00  INFO 13536 --- [donations-service] [    Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=25144b05-3f32-381a-8d94-6a6c0148d3a7
-2025-05-18T02:56:32.591+02:00  INFO 13536 --- [donations-service] [    Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-05-18T02:56:33.228+02:00  INFO 13536 --- [donations-service] [    Test worker] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2025-05-18T02:56:33.478+02:00  WARN 13536 --- [donations-service] [    Test worker] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-05-18T02:56:33.591+02:00  INFO 13536 --- [donations-service] [    Test worker] c.p.d.DonationsServiceApplicationTests   : Started DonationsServiceApplicationTests in 4.287 seconds (process running for 7.716)
+2025-06-16T16:14:27.165+02:00  WARN 4372 --- [donations-service] [    Test worker] i.s.s.boot.SentrySpringVersionChecker    : ############################### WARNING ###############################
+2025-06-16T16:14:27.167+02:00  WARN 4372 --- [donations-service] [    Test worker] i.s.s.boot.SentrySpringVersionChecker    : ##                                                                   ##
+2025-06-16T16:14:27.167+02:00  WARN 4372 --- [donations-service] [    Test worker] i.s.s.boot.SentrySpringVersionChecker    : ##            !Incompatible Spring Boot Version detected!            ##
+2025-06-16T16:14:27.167+02:00  WARN 4372 --- [donations-service] [    Test worker] i.s.s.boot.SentrySpringVersionChecker    : ##              Please see the sentry docs linked below              ##
+2025-06-16T16:14:27.168+02:00  WARN 4372 --- [donations-service] [    Test worker] i.s.s.boot.SentrySpringVersionChecker    : ##                Choose your Spring Boot version and                ##
+2025-06-16T16:14:27.168+02:00  WARN 4372 --- [donations-service] [    Test worker] i.s.s.boot.SentrySpringVersionChecker    : ##                  install the matching dependency                  ##
+2025-06-16T16:14:27.168+02:00  WARN 4372 --- [donations-service] [    Test worker] i.s.s.boot.SentrySpringVersionChecker    : ##                                                                   ##
+2025-06-16T16:14:27.169+02:00  WARN 4372 --- [donations-service] [    Test worker] i.s.s.boot.SentrySpringVersionChecker    : ## https://docs.sentry.io/platforms/java/guides/spring-boot/#install ##
+2025-06-16T16:14:27.169+02:00  WARN 4372 --- [donations-service] [    Test worker] i.s.s.boot.SentrySpringVersionChecker    : ##                                                                   ##
+2025-06-16T16:14:27.169+02:00  WARN 4372 --- [donations-service] [    Test worker] i.s.s.boot.SentrySpringVersionChecker    : #######################################################################
+2025-06-16T16:14:27.181+02:00  INFO 4372 --- [donations-service] [    Test worker] c.p.d.DonationsServiceApplicationTests   : Starting DonationsServiceApplicationTests using Java 17.0.12 with PID 4372 (started by hristo in D:\Individual-Assignment\PibbleTV-Backend\donations-service)
+2025-06-16T16:14:27.183+02:00  INFO 4372 --- [donations-service] [    Test worker] c.p.d.DonationsServiceApplicationTests   : The following 1 profile is active: &quot;test&quot;
+2025-06-16T16:14:28.428+02:00  INFO 4372 --- [donations-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2025-06-16T16:14:28.656+02:00  INFO 4372 --- [donations-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 217 ms. Found 1 R2DBC repository interface.
+2025-06-16T16:14:29.838+02:00  INFO 4372 --- [donations-service] [    Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-16T16:14:29.996+02:00  INFO 4372 --- [donations-service] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 0 endpoints beneath base path '/actuator'
+2025-06-16T16:14:30.580+02:00  INFO 4372 --- [donations-service] [    Test worker] c.p.d.DonationsServiceApplicationTests   : Started DonationsServiceApplicationTests in 3.924 seconds (process running for 6.069)
 </pre>
 </span>
 </div>
@@ -119,7 +127,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.13</a> at May 18, 2025, 2:56:35 AM</p>
+<a href="https://www.gradle.org">Gradle 8.13</a> at Jun 16, 2025, 4:14:32 PM</p>
 </div>
 </div>
 </body>
