@@ -4,8 +4,11 @@ import com.pibbletv.donations_service.business.interfaces.DonationService;
 import com.pibbletv.donations_service.domain.Donation;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.HtmlUtils;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import java.lang.Exception;
+import io.sentry.Sentry;
 
 import java.util.UUID;
 
@@ -19,13 +22,30 @@ public class DonationController {
 
     @PostMapping(value = &quot;/makeDonation&quot;)
     public Mono&lt;Void&gt; makeDonation(@RequestBody Donation donation) {
-<span class="nc" id="L22">        return donationService.makeDonation(donation);</span>
+<span class="nc" id="L25">        return donationService.makeDonation(donation);</span>
     }
 
     @GetMapping(value = &quot;/getDonations&quot;)
-    public Flux&lt;Donation&gt; getAllDonations(@RequestParam UUID userId) {
-<span class="nc" id="L27">        return donationService.getAllDonations(userId);</span>
+    public Flux&lt;Donation&gt; getAllDonations(@RequestParam String userId) {
+<span class="nc" id="L30">        return donationService.getAllDonations(userId)</span>
+<span class="nc" id="L31">                .map(donation -&gt; {</span>
+<span class="nc bnc" id="L32" title="All 2 branches missed.">                    if (donation.getDonationMessage() != null) {</span>
+<span class="nc" id="L33">                        donation.setDonationMessage(HtmlUtils.htmlEscape(donation.getDonationMessage()));</span>
+                    }
+<span class="nc" id="L35">                    return donation;</span>
+                });
     }
 
+    @GetMapping(&quot;/test-sentry&quot;)
+    public String testSentry() {
+        try {
+<span class="nc" id="L42">            throw new Exception(&quot;This is a test.&quot;);</span>
+<span class="nc" id="L43">        } catch (Exception e) {</span>
+<span class="nc" id="L44">            Sentry.captureException(e);</span>
+<span class="nc" id="L45">            return &quot;Exception sent to Sentry&quot;;</span>
+        }
+    }
 }
+
+
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
