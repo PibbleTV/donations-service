@@ -2,6 +2,7 @@ package com.pibbletv.donations_service.controller;
 
 import com.pibbletv.donations_service.business.interfaces.DonationService;
 import com.pibbletv.donations_service.domain.Donation;
+import io.sentry.SentryLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
@@ -22,6 +23,9 @@ public class DonationController {
 
     @PostMapping(value = "/makeDonation")
     public Mono<Void> makeDonation(@RequestBody Donation donation) {
+        Sentry.captureMessage("User " + donation.getDonorId() + " donated "
+                + donation.getDonationAmount() + " to " + donation.getReceiverId()
+                + " with the message " + donation.getDonationMessage(), SentryLevel.INFO);
         return donationService.makeDonation(donation);
     }
 

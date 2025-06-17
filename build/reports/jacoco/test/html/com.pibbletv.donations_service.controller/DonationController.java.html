@@ -2,6 +2,7 @@
 
 import com.pibbletv.donations_service.business.interfaces.DonationService;
 import com.pibbletv.donations_service.domain.Donation;
+import io.sentry.SentryLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
@@ -22,27 +23,30 @@ public class DonationController {
 
     @PostMapping(value = &quot;/makeDonation&quot;)
     public Mono&lt;Void&gt; makeDonation(@RequestBody Donation donation) {
-<span class="nc" id="L25">        return donationService.makeDonation(donation);</span>
+<span class="nc" id="L26">        Sentry.captureMessage(&quot;User &quot; + donation.getDonorId() + &quot; donated &quot;</span>
+<span class="nc" id="L27">                + donation.getDonationAmount() + &quot; to &quot; + donation.getReceiverId()</span>
+<span class="nc" id="L28">                + &quot; with the message &quot; + donation.getDonationMessage(), SentryLevel.INFO);</span>
+<span class="nc" id="L29">        return donationService.makeDonation(donation);</span>
     }
 
     @GetMapping(value = &quot;/getDonations&quot;)
     public Flux&lt;Donation&gt; getAllDonations(@RequestParam String userId) {
-<span class="nc" id="L30">        return donationService.getAllDonations(userId)</span>
-<span class="nc" id="L31">                .map(donation -&gt; {</span>
-<span class="nc bnc" id="L32" title="All 2 branches missed.">                    if (donation.getDonationMessage() != null) {</span>
-<span class="nc" id="L33">                        donation.setDonationMessage(HtmlUtils.htmlEscape(donation.getDonationMessage()));</span>
+<span class="nc" id="L34">        return donationService.getAllDonations(userId)</span>
+<span class="nc" id="L35">                .map(donation -&gt; {</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">                    if (donation.getDonationMessage() != null) {</span>
+<span class="nc" id="L37">                        donation.setDonationMessage(HtmlUtils.htmlEscape(donation.getDonationMessage()));</span>
                     }
-<span class="nc" id="L35">                    return donation;</span>
+<span class="nc" id="L39">                    return donation;</span>
                 });
     }
 
     @GetMapping(&quot;/test-sentry&quot;)
     public String testSentry() {
         try {
-<span class="nc" id="L42">            throw new Exception(&quot;This is a test.&quot;);</span>
-<span class="nc" id="L43">        } catch (Exception e) {</span>
-<span class="nc" id="L44">            Sentry.captureException(e);</span>
-<span class="nc" id="L45">            return &quot;Exception sent to Sentry&quot;;</span>
+<span class="nc" id="L46">            throw new Exception(&quot;This is a test.&quot;);</span>
+<span class="nc" id="L47">        } catch (Exception e) {</span>
+<span class="nc" id="L48">            Sentry.captureException(e);</span>
+<span class="nc" id="L49">            return &quot;Exception sent to Sentry&quot;;</span>
         }
     }
 }
