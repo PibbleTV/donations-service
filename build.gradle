@@ -1,3 +1,5 @@
+
+
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.4.4'
@@ -5,6 +7,15 @@ plugins {
     id "org.sonarqube" version "6.0.1.5171"
     id "io.sentry.jvm.gradle" version "5.7.0"
     id 'jacoco'
+    id 'com.github.node-gradle.node' version '7.0.2'
+}
+
+def envFile = file('.env')
+def envProps = new Properties()
+if (envFile.exists()) {
+    envFile.withInputStream { stream ->
+        envProps.load(stream)
+    }
 }
 
 sonar {
@@ -28,8 +39,9 @@ sonar {
 sentry {
     includeSourceContext = true
     org = "pibbletv"
-    projectName = "java-spring-boot"
-    authToken = "token"
+    projectName = "donations-service"
+    authToken = System.getenv('SENTRY_AUTH_TOKEN')
+    // New secret because I accidentally leaked the old one :(
 }
 
 group = 'com.pibbletv'

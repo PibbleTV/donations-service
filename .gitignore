@@ -138,7 +138,11 @@ hs_err_pid*
 replay_pid*
 
 # Properties #
-*.properties
+application.properties
+
+# Configurations #
+GatewayConfig.java
 
 # Queries for easy access #
 queries.txt
+
