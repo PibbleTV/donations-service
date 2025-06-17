@@ -3,7 +3,7 @@
 <span class="nc" id="L3">public class InputSanitizer {</span>
 
     public static String sanitizeSearchTerm(String input) {
-<span class="nc bnc" id="L6" title="All 6 branches missed.">        if (input == null || input.length() &gt; 100 || !input.matches(&quot;[a-zA-Z0-9\\s\\-]{1,50}&quot;)) {</span>
+<span class="nc bnc" id="L6" title="All 6 branches missed.">        if (input == null || input.length() &gt; 100 || !input.matches(&quot;[a-zA-Z0-9\\s\\-!,.?']{1,200}&quot;)) {</span>
 <span class="nc" id="L7">            throw new IllegalArgumentException(&quot;Invalid input&quot;);</span>
         }
 <span class="nc" id="L9">        return input.trim();</span>

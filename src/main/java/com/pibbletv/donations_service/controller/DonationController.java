@@ -24,7 +24,8 @@ public class DonationController {
     @PostMapping(value = "/makeDonation")
     public Mono<Void> makeDonation(@RequestBody Donation donation) {
         Sentry.captureMessage("User " + donation.getDonorId() + " donated "
-                + donation.getDonationAmount() + " to " + donation.getReceiverId(), SentryLevel.INFO);
+                + donation.getDonationAmount() + " to " + donation.getReceiverId()
+                + " with the message " + donation.getDonationMessage(), SentryLevel.INFO);
         return donationService.makeDonation(donation);
     }
 
